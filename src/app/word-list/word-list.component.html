@@ -1,0 +1,117 @@
+
+<div class="word-list-container container">
+	
+	<div class="row">
+		<div class="col-sm-12 col-md-6 col-md-offset-3 "> 
+
+		    <div class="input-group">
+		      <input #searchBox class="form-control" id="search-bar" placeholder="Search in English or Spanish" (keyup)="0">
+		      <span class="input-group-btn">
+		        <button class="btn btn-secondary btn-outline" type="button" (click)="clearSearchBar()">
+		        	<i class="fa fa-times-circle fa-3" aria-hidden="true"></i>
+		        </button>
+		      </span>
+		    </div>
+
+		</div>
+	</div>
+		
+	<br>
+
+	<p>{{defintionsCount}} definitions<p>
+
+	<!--
+	content filter borrowed from :
+
+	 Novak, Istvan. Unraveling Angular 2: The Ultimate Beginners Guide with over 130 Complete Samples (Unraveling Series Book 8) (p. 42). Istvan Novak. Kindle Edition.  -->
+		    	
+	<table class="table table-hover">
+
+		<thead>
+			<tr>
+			<th>Spanish</th>
+			<th>English</th>
+			<th>Edit/Delete</th>
+			</tr>
+		</thead>
+
+		<tbody *ngFor="let word of definitions | contentFilter:searchBox.value">
+			<tr>
+			<!-- <th scope="row">{{word.id}}</th> -->
+			<td>{{word.spanish}}</td>
+			<td>{{word.english}}</td>
+			<td>
+				<a [routerLink]="['/edit', word.id]">
+					<i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+				</a>
+
+				<a [routerLink]="['/delete', word.id]">
+					<i class="fa fa-ban" aria-hidden="true"></i>
+				</a>
+
+			</td>
+			</tr>
+
+		</tbody>
+	</table>
+
+
+			  
+			  <!-- <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)"> -->
+			  <!-- <div class="col-md-6">
+					<div contenteditable="true" 
+						 style="margin-bottom: 10px;" 
+						 (input)="onInput($event, word.id)" 
+						 (keyup.enter)="saveSpanish($event, word)">
+
+					  	{{word.spanish}}
+					</div>
+				</div>
+				<div class="col-md-6 col-md-offset-6">
+
+					<div contenteditable="true"
+					     (input)="onInput($event, word.id)"
+				         (keyup.enter)="saveEnglish($event, word)">
+					  	
+					  	{{word.english}}
+					</div>
+				</div>
+
+			  <span class="input-group-addon"><i class="fa fa-chevron-circle-down" aria-hidden="true"></i></span>
+			 -->
+			
+
+<!-- 
+
+			<div class="container" style="width: 100%;">
+			  
+			  	<div class="row">
+					<div class="col-md-6">
+						<div contenteditable="true" 
+							 style="margin-bottom: 10px;" 
+							 (input)="onInput($event, word.id)" 
+							 (keyup.enter)="saveSpanish($event, word)">
+
+						  	{{word.spanish}}
+						</div>
+					</div>
+					<div class="col-md-6 col-md-offset-6">
+
+						<div contenteditable="true"
+						     (input)="onInput($event, word.id)"
+					         (keyup.enter)="saveEnglish($event, word)">
+						  	
+						  	{{word.english}}
+						</div>
+					</div>
+					<i class="fa fa-chevron-circle-down" aria-hidden="true"></i>
+					
+				</div>
+			  
+			</div>
+ -->
+
+
+</div>
+
+

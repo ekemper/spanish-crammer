@@ -1,0 +1,13 @@
+
+<div class="container">
+	<h1>Really delete this definition??</h1>
+	<br>
+	<h3>English : <i id="english"></i></h3>
+	<h3>Spanish : <i id="spanish"></i></h3>
+	<br>
+	<button class="btn btn-outline-warning" (click)="delete()">Yes, Delete</button>
+</div>
+
+<div class="alert alert-warning" role="alert" *ngIf="definitionDeleted">
+  <strong>Success!</strong> Definition Deleted.
+</div>

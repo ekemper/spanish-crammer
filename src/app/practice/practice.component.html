@@ -1,0 +1,81 @@
+
+<div class="alert alert-success" role="alert" *ngIf="match">
+  <h2> <strong>Success! </strong> </h2>
+</div>
+
+<div class="container">
+	<div class="row">
+
+		<!-- /////// SPANISH COLUMN -->
+		<div class="col-sm-12 col-md-6">
+
+			<div class="card">
+			  <div class="card-header">
+			    <label>Spanish:</label>
+			  </div>
+			  <div class="card-block">
+			    <h3 class="card-title" 
+			        *ngIf="randomDefinition && !testingSpanish"> 
+			        {{randomDefinition.spanish}} </h3>
+
+			    <input [(ngModel)]="spanishInputValue"
+			       *ngIf="testingSpanish"
+			       (keyup.enter)="onEnter()"
+			       class="form-control"
+				   id="spanishInput" 
+			       type="text" 
+			       placeholder="?">    
+			       
+			  </div>
+			</div>
+	    </div>
+
+	    <!-- /////// ENGLISH COLUMN -->
+		<div class="col-sm-12 col-md-6">	 
+			    
+		  	<div class="card">
+			  <div class="card-header">
+			    <label>English:</label>
+			  </div>
+			  <div class="card-block">
+			    <h3 class="card-title" 
+			        *ngIf="randomDefinition && !testingEnglish"> 
+			        {{randomDefinition.english}} </h3>
+
+		        <input [(ngModel)]="englishInputValue" 
+		           *ngIf="testingEnglish"
+		           (keyup.enter)="onEnter()"
+		           class="form-control"
+		           id="englishInput" 
+		           type="text" 
+		           placeholder="?">
+		           
+			  </div>
+			</div>
+		</div><!--  // end english column  -->
+	</div><!--  // end row  -->
+
+	<br>
+
+	<button type="button" 
+	    class="btn btn-outline-success"
+	    *ngIf="readyForNext"
+	    (click)="initPractice()"
+	    (keyup.enter)="onEnter()">
+	    Next <i class="fa fa-coffee" aria-hidden="true"></i>
+	</button>
+
+	<div class="btn-group form-group" role="group" aria-label="GO" *ngIf=!readyForNext>
+	  <button type="button" 
+	          class="btn btn-outline-primary"
+	          (click)="checkForMatch()">Submit</button>
+	  
+	  <button type="button" 
+	  		  class="btn btn-outline-primary"
+	  		  (click)="iDontKnow()">I don't know...</button>
+	</div>
+
+</div>
+<div class="alert alert-warning" role="alert" *ngIf="tryAgainMessage">
+  <h2><strong>OOPS!</strong> Try Again.</h2>
+</div>

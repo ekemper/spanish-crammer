@@ -45,7 +45,7 @@ export class EditDefinitionComponent implements OnInit {
         
 		this.model.spanish = (<HTMLInputElement>document.getElementById("spanishInput")).value;
 		this.model.english = (<HTMLInputElement>document.getElementById("englishInput")).value;
-		this.model.id = this.id;
+		this.model._id = this.id;
 
 		console.log('this.model.spanish : ' + this.model.spanish);
 		console.log('this.model.english : ' + this.model.english);

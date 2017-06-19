@@ -1,5 +1,5 @@
 export class Definition {
-	id: string;
+	_id: string;
 	english: string = '';
 	spanish: string = '';
 	

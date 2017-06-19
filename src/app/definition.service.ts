@@ -13,7 +13,7 @@ export class DefinitionService {
 	// Resolve HTTP using the constructor
 	constructor (private http: Http) {}
 	// private instance variable to hold base url
-	private apiServiceUrl = "/definition";
+	private apiServiceUrl = "http://0.0.0.0:3000/api/definitions";
 
 	getAllDefinitions() : Observable<Definition[]> {
 

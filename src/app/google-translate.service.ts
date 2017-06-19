@@ -15,6 +15,6 @@ export class GoogleTranslateService {
   constructor(private http: Http) { }
 
 
-  	//private googleTransUrl = "http://0.0.0.0:3000/api/definitions";
+  	private googleTransUrl = "http://0.0.0.0:3000/api/definitions";
 
 }

@@ -1,0 +1,22 @@
+{
+  "name": "definition",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "spanish": {
+      "type": "string",
+      "required": true
+    },
+    "english": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

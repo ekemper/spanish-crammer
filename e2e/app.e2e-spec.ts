@@ -1,10 +1,10 @@
-import { SpanishGrammerCrammerPage } from './app.po';
+import { SpanishPracticePage } from './app.po';
 
-describe('spanish-grammer-crammer App', () => {
-  let page: SpanishGrammerCrammerPage;
+describe('spanish-practice App', () => {
+  let page: SpanishPracticePage;
 
   beforeEach(() => {
-    page = new SpanishGrammerCrammerPage();
+    page = new SpanishPracticePage();
   });
 
   it('should display message saying app works', () => {
